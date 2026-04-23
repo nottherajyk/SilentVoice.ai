@@ -166,7 +166,10 @@ function App() {
 
         {/* QUOTE */}
         <div className="mt-16 text-center max-w-3xl mx-auto px-4">
+         <p className="text-xl md:text-2xl font-serif text-[#fdfbf7] leading-relaxed tracking-wide drop-shadow-md italic">
+            "I wasn't trying to hurt you, but I must have because I made you feel so bad about yourself that you decided to go and do the unthinkable - Ishida"
          
+          </p>
         </div>
         
       </div>
