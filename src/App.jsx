@@ -65,10 +65,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#8a7056] text-[#fdfbf7] font-sans selection:bg-white/30 pb-20">
-      
+
       {/* HERO SECTION */}
       <div className="relative w-full h-[80vh] md:h-screen flex flex-col justify-center items-center text-center p-6 md:p-16 border-b border-white/20">
-        
+
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img src={heroBg} alt="Cinematic background" className="w-full h-full object-cover opacity-90" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#8a7056] via-[#8a7056]/30 to-[#8a7056]/50" />
@@ -82,13 +82,13 @@ function App() {
             2026 | Real-time Web App | AI Engine | Language: ASL
           </p>
           <div className="w-3/4 max-w-lg h-px bg-white/40 mb-10" />
-          
+
           <div className="flex flex-col md:flex-row gap-8 items-center justify-center mt-4">
             <div className="max-w-xl text-[#fdfbf7] leading-relaxed font-light text-sm md:text-base drop-shadow-md text-center bg-black/20 p-8 backdrop-blur-md rounded-sm border border-white/10">
             
               <p className="text-sm">
-                A student with hearing problems suffers from isolation and decides to change their world. 
-                Years later, this AI-powered bridge between silence and spoken words translates American Sign Language 
+                A student with hearing problems suffers from isolation and decides to change their world.
+                Years later, this AI-powered bridge between silence and spoken words translates American Sign Language
                 gestures into text instantly, allowing everyone to be heard without saying a word.
               </p>
             </div>
@@ -106,7 +106,7 @@ function App() {
       {/* MAIN APP GRID */}
       <div className="max-w-7xl mx-auto w-full p-6 md:p-12 mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
+
           {/* LEFT SIDE (Takes 2 cols): Camera + Detected Letter */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <div className="aspect-video w-full bg-[#3b2c1f]/80 overflow-hidden shadow-2xl relative border border-white/20 rounded-sm">
@@ -127,16 +127,16 @@ function App() {
               )}
               {!isRunning && !isLoading && !error && (
                 <div className="absolute inset-0 flex items-center justify-center z-50 bg-black/60">
-                   <button onClick={startCamera} className="px-8 py-3 bg-white/10 border border-white/30 text-[#fdfbf7] hover:bg-white/20 transition-all font-serif italic text-xl tracking-widest shadow-xl backdrop-blur-md">
-                     Start Translation
-                   </button>
+                  <button onClick={startCamera} className="px-8 py-3 bg-white/10 border border-white/30 text-[#fdfbf7] hover:bg-white/20 transition-all font-serif italic text-xl tracking-widest shadow-xl backdrop-blur-md">
+                    Start Translation
+                  </button>
                 </div>
               )}
             </div>
 
             {/* DETECTED LETTER STRIP */}
             <div className="w-full bg-black/20 border border-white/10 p-6 shadow-lg backdrop-blur-md rounded-sm">
-               <DetectedLetter letter={detectedLetter} confidence={confidence} handDetected={handDetected} />
+              <DetectedLetter letter={detectedLetter} confidence={confidence} handDetected={handDetected} />
             </div>
           </div>
 
@@ -158,7 +158,7 @@ function App() {
               />
             </div>
             <div className="bg-[#a38c73]/30 border border-white/10 p-4 md:p-6 shadow-lg backdrop-blur-md rounded-sm">
-               <ConfidenceMeter confidence={confidence} handDetected={handDetected} />
+              <ConfidenceMeter confidence={confidence} handDetected={handDetected} />
             </div>
           </div>
 
@@ -171,9 +171,38 @@ function App() {
          
           </p>
         </div>
-        
+
       </div>
-      
+
+      {/* FOOTER */}
+      <footer className="w-full border-t border-white/10 mt-16 pt-8 pb-12 px-6 md:px-16 text-[#fdfbf7]/60 text-[10px] md:text-xs font-light tracking-widest uppercase">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+          
+          {/* Left */}
+          <div>
+            <p>SignSpeak © 2026</p>
+          </div>
+          
+          {/* Center */}
+          <div className="md:text-center normal-case tracking-wide opacity-80">
+            <p>Turning gestures into words.</p>
+            <p>Making communication easier for everyone.</p>
+          </div>
+          
+          {/* Right */}
+          <div className="flex flex-col md:items-end gap-1">
+            <p className="opacity-80">React • TensorFlow.js • MediaPipe</p>
+            <p>
+              IG <a href="https://instagram.com/nottherajyk" target="_blank" rel="noreferrer" className="text-[#fdfbf7]/80 hover:text-white transition-colors">@nottherajyk</a>
+              <span className="mx-2">•</span>
+              GITHUB <a href="https://github.com/nottherajyk" target="_blank" rel="noreferrer" className="text-[#fdfbf7]/80 hover:text-white transition-colors">@nottherajyk</a>
+            </p>
+          </div>
+
+        </div>
+      </footer>
+
+
       {/* Floating Camera toggle */}
       {isRunning && (
         <div className="fixed bottom-6 right-6 z-50">
