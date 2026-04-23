@@ -79,7 +79,7 @@ function App() {
             A Silent Voice
           </h1>
           <p className="text-xs md:text-sm tracking-[0.3em] font-semibold opacity-90 mb-8 drop-shadow-md uppercase text-[#fdfbf7]">
-            2026 | Real-time Web App | AI Engine | Language: ASL
+           Real-time Web App | AI Engine | Language: ASL
           </p>
           <div className="w-3/4 max-w-lg h-px bg-white/40 mb-10" />
 
@@ -87,8 +87,7 @@ function App() {
             <div className="max-w-xl text-[#fdfbf7] leading-relaxed font-light text-sm md:text-base drop-shadow-md text-center bg-black/20 p-8 backdrop-blur-md rounded-sm border border-white/10">
             
               <p className="text-sm">
-                A student with hearing problems suffers from isolation and decides to change their world.
-                Years later, this AI-powered bridge between silence and spoken words translates American Sign Language
+                People with hearing problems suffers from isolation, this AI-powered bridge between silence and spoken words translates American Sign Language
                 gestures into text instantly, allowing everyone to be heard without saying a word.
               </p>
             </div>
