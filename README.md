@@ -16,9 +16,8 @@ The application features a cinematic, elegant aesthetic inspired by the anime mo
 ## 🛠 Tech Stack
 
 - **Frontend**: React 18, Vite
-- **Styling**: Tailwind CSS v3 (Custom earthy, cinematic configuration)
+- **Styling**: Tailwind CSS v3 
 - **Machine Learning Engine**: [Google MediaPipe Hands](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker) with TensorFlow.js backing.
-- **Animations**: Native CSS smooth scrolling and CSS keyframes.
 
 ## 📦 Running Locally
 
