@@ -83,11 +83,8 @@ function App() {
           </p>
           <div className="w-3/4 max-w-lg h-px bg-white/40 mb-10" />
           
-          <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-            <div className="w-24 h-36 md:w-32 md:h-48 bg-black/40 rounded-sm shrink-0 shadow-2xl overflow-hidden flex items-center justify-center border border-white/30 backdrop-blur-md">
-                 <DetectedLetter letter={detectedLetter} confidence={confidence} handDetected={handDetected} />
-            </div>
-            <div className="max-w-md text-[#fdfbf7] leading-relaxed font-light text-sm md:text-base drop-shadow-md text-left bg-black/20 p-6 backdrop-blur-md rounded-sm border border-white/10">
+          <div className="flex flex-col md:flex-row gap-8 items-center justify-center mt-4">
+            <div className="max-w-xl text-[#fdfbf7] leading-relaxed font-light text-sm md:text-base drop-shadow-md text-center bg-black/20 p-8 backdrop-blur-md rounded-sm border border-white/10">
               <p className="mb-2"><span className="opacity-70 font-semibold uppercase text-xs tracking-widest">Dir.</span> Silent Voice AI Team</p>
               <p className="mb-4"><span className="opacity-70 font-semibold uppercase text-xs tracking-widest">Cast:</span> MediaPipe Hand Tracking</p>
               <p className="text-sm">
@@ -111,17 +108,37 @@ function App() {
       <div className="max-w-7xl mx-auto w-full p-6 md:p-12 mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
-          {/* CAMERA (Takes 2 cols) */}
-          <div className="md:col-span-2 aspect-video bg-[#3b2c1f]/80 overflow-hidden shadow-2xl relative border border-white/20">
-            <CameraPanel
-              videoRef={videoRef}
-              canvasRef={canvasRef}
-              isLoading={isLoading}
-              error={error}
-              isRunning={isRunning}
-              startCamera={startCamera}
-              handDetected={handDetected}
-            />
+          {/* LEFT SIDE (Takes 2 cols): Camera + Detected Letter */}
+          <div className="lg:col-span-2 flex flex-col gap-6">
+            <div className="aspect-video w-full bg-[#3b2c1f]/80 overflow-hidden shadow-2xl relative border border-white/20 rounded-sm">
+              <CameraPanel
+                videoRef={videoRef}
+                canvasRef={canvasRef}
+                isLoading={isLoading}
+                error={error}
+                isRunning={isRunning}
+                startCamera={startCamera}
+                handDetected={handDetected}
+              />
+              {isRunning && (
+                <div className="absolute top-4 right-4 z-50 flex gap-2">
+                  <span className="bg-red-500/80 text-white text-xs px-2 py-1 rounded-sm uppercase tracking-widest font-bold animate-pulse">Live</span>
+                  <span className="bg-black/50 text-white text-xs px-2 py-1 rounded-sm uppercase tracking-widest backdrop-blur-sm">{fps} FPS</span>
+                </div>
+              )}
+              {!isRunning && !isLoading && !error && (
+                <div className="absolute inset-0 flex items-center justify-center z-50 bg-black/60">
+                   <button onClick={startCamera} className="px-8 py-3 bg-white/10 border border-white/30 text-[#fdfbf7] hover:bg-white/20 transition-all font-serif italic text-xl tracking-widest shadow-xl backdrop-blur-md">
+                     Start Translation
+                   </button>
+                </div>
+              )}
+            </div>
+
+            {/* DETECTED LETTER STRIP */}
+            <div className="w-full bg-black/20 border border-white/10 p-6 shadow-lg backdrop-blur-md rounded-sm">
+               <DetectedLetter letter={detectedLetter} confidence={confidence} handDetected={handDetected} />
+            </div>
           </div>
 
           {/* RIGHT SIDE TOOLS (Takes 1 col, stacked) */}
