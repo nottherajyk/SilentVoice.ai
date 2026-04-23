@@ -12,13 +12,13 @@ export default {
       },
       colors: {
         brutal: {
-          yellow: '#faff00',
-          green: '#22c55e',
-          blue: '#00b4ff',
-          pink: '#ff00a0',
-          black: '#000000',
-          white: '#ffffff',
-          gray: '#e5e7eb'
+          yellow: '#a38c73',
+          green: '#8a9973',
+          blue: '#82a4ab',
+          pink: '#e2b4bd',
+          black: '#4a3827',
+          white: '#fdfbf7',
+          gray: '#c2b5a5'
         }
       },
       borderWidth: {
@@ -30,9 +30,9 @@ export default {
         '4xl': '2rem',
       },
       boxShadow: {
-        'brutal': '4px 4px 0px 0px rgba(0,0,0,1)',
-        'brutal-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
-        'brutal-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
+        'brutal': '0 8px 30px rgba(74, 56, 39, 0.15)',
+        'brutal-lg': '0 15px 40px rgba(74, 56, 39, 0.25)',
+        'brutal-hover': '0 4px 15px rgba(74, 56, 39, 0.1)',
       }
     },
   },

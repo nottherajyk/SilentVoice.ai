@@ -66,7 +66,7 @@ function App() {
   }, [detectedLetter, handleAddLetter, handleSpace, handleBackspace, handleClear]);
 
   return (
-    <div className="min-h-screen bg-brutal-black text-brutal-black flex flex-col md:flex-row">
+    <div className="min-h-screen text-brutal-black flex flex-col md:flex-row">
       {/* Left Sidebar (Yellow) */}
       <div className="md:w-24 lg:w-32 bg-brutal-yellow flex flex-row md:flex-col items-center justify-between py-6 px-4 md:px-0 md:min-h-screen border-b-4 md:border-b-0 md:border-r-4 border-brutal-black z-20">
         <button className="p-2 hover:scale-110 transition-transform">
