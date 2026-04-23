@@ -85,8 +85,7 @@ function App() {
           
           <div className="flex flex-col md:flex-row gap-8 items-center justify-center mt-4">
             <div className="max-w-xl text-[#fdfbf7] leading-relaxed font-light text-sm md:text-base drop-shadow-md text-center bg-black/20 p-8 backdrop-blur-md rounded-sm border border-white/10">
-              <p className="mb-2"><span className="opacity-70 font-semibold uppercase text-xs tracking-widest">Dir.</span> Silent Voice AI Team</p>
-              <p className="mb-4"><span className="opacity-70 font-semibold uppercase text-xs tracking-widest">Cast:</span> MediaPipe Hand Tracking</p>
+            
               <p className="text-sm">
                 A student with hearing problems suffers from isolation and decides to change their world. 
                 Years later, this AI-powered bridge between silence and spoken words translates American Sign Language 
@@ -167,9 +166,7 @@ function App() {
 
         {/* QUOTE */}
         <div className="mt-16 text-center max-w-3xl mx-auto px-4">
-          <p className="text-xl md:text-2xl font-serif text-[#fdfbf7] leading-relaxed tracking-wide drop-shadow-md italic">
-            "I wasn't trying to hurt you, but I must have because I made you feel so bad about yourself that you decided to go and do the unthinkable."
-          </p>
+         
         </div>
         
       </div>
@@ -182,7 +179,7 @@ function App() {
             className="px-6 py-2 bg-[#4a3827]/80 text-[#fdfbf7] border border-white/20 hover:bg-[#4a3827] transition-all backdrop-blur-sm text-sm tracking-widest uppercase shadow-xl"
             id="stop-camera-btn"
           >
-            Stop Engine
+            Stop Camera
           </button>
         </div>
       )}
