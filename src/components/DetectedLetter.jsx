@@ -2,8 +2,8 @@ import React from 'react';
 
 function DetectedLetter({ letter, confidence, handDetected }) {
   return (
-    <div className="brutal-panel brutal-pink p-6 flex flex-col items-center justify-center text-center min-h-[250px]">
-      <h3 className="font-display font-black text-2xl uppercase border-b-4 border-black pb-2 mb-6 w-full text-left">
+    <div className="  p-6 flex flex-col items-center justify-center text-center min-h-[250px]">
+      <h3 className="font-serif italic text-2xl tracking-widest text-[#fdfbf7] border-b border-white/20 pb-2 mb-6 w-full text-left">
         detected letter
       </h3>
       

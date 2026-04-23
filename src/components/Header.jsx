@@ -13,7 +13,7 @@ function Header({ isRunning, handDetected, fps }) {
       </div>
 
       <div className="hidden md:block">
-        <div className="w-24 h-24 bg-brutal-pink rounded-full border-4 border-black shadow-brutal flex items-center justify-center text-4xl animate-bounce">
+        <div className="w-24 h-24 bg- rounded-full border-4 border-black shadow-brutal flex items-center justify-center text-4xl animate-bounce">
           {handDetected ? '✌️' : '🖐️'}
         </div>
       </div>

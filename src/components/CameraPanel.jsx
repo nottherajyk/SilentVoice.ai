@@ -2,66 +2,59 @@ import React from 'react';
 
 function CameraPanel({ videoRef, canvasRef, isLoading, error, isRunning, startCamera, handDetected }) {
   return (
-    <div className="brutal-panel brutal-green p-6 relative flex flex-col items-center justify-center min-h-[400px]">
+    <div className="w-full h-full relative flex flex-col items-center justify-center bg-[#4a3827]">
       
-      {!isRunning && !error && (
-        <div className="text-center space-y-6 z-20">
-          <div className="text-8xl">🤟</div>
-          <h2 className="font-display font-black text-3xl uppercase tracking-wide">
-            ready to detect
-          </h2>
-          <button 
-            onClick={startCamera}
-            className="brutal-btn brutal-btn-black bg-brutal-black text-brutal-yellow hover:bg-black w-full"
-          >
-            ▶ start camera
-          </button>
-        </div>
-      )}
-
       {isLoading && (
-        <div className="text-center space-y-4 z-20">
+        <div className="text-center space-y-4 z-20 absolute inset-0 flex flex-col items-center justify-center bg-[#4a3827]">
           <div className="loader mx-auto"></div>
-          <p className="font-bold text-xl uppercase tracking-widest animate-pulse">
-            loading camera...
+          <p className="font-serif italic text-[#fdfbf7]/80 text-xl tracking-widest animate-pulse">
+            Connecting...
           </p>
         </div>
       )}
 
       {error && (
-        <div className="brutal-panel bg-white p-6 border-red-500 text-center max-w-md z-20">
-          <div className="text-4xl mb-4">⚠️</div>
-          <h3 className="font-display font-black text-red-600 text-2xl uppercase mb-2">camera error</h3>
-          <p className="font-bold">{error}</p>
+        <div className="bg-[#4a3827]/90 p-8 border border-red-900 text-center max-w-md z-20 backdrop-blur-md shadow-2xl">
+          <h3 className="font-serif italic text-red-300 text-2xl mb-4">Connection Lost</h3>
+          <p className="font-light text-[#fdfbf7]/80 mb-6">{error}</p>
           <button 
             onClick={() => window.location.reload()}
-            className="brutal-btn brutal-btn-yellow mt-6 w-full"
+            className="px-6 py-2 bg-white/10 hover:bg-white/20 transition-all border border-white/20 text-[#fdfbf7] tracking-widest text-sm uppercase"
           >
-            refresh page
+            Retry Connection
           </button>
         </div>
       )}
 
-      <div className={`camera-container w-full max-w-3xl mx-auto shadow-brutal ${(isRunning && !isLoading) ? 'block' : 'hidden'}`}>
+      <div className={`w-full h-full ${(isRunning && !isLoading) ? 'block' : 'hidden'}`}>
         <video
           ref={videoRef}
           autoPlay
           playsInline
           muted
+          className="w-full h-full object-cover transform scale-x-[-1] filter contrast-125 saturate-50"
         />
         <canvas
           ref={canvasRef}
-          className="hand-canvas"
+          className="absolute top-0 left-0 w-full h-full transform scale-x-[-1]"
         />
         
         {isRunning && !handDetected && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/40 z-20">
-            <p className="bg-brutal-yellow brutal-border px-6 py-3 font-display font-black text-2xl uppercase rounded-full rotate-[-5deg]">
-              show a hand sign
+          <div className="absolute inset-0 flex items-center justify-center bg-[#3b2c1f]/40 z-20 backdrop-blur-[1px] transition-all duration-700">
+            <p className="text-[#fdfbf7] font-serif italic text-xl md:text-2xl tracking-widest drop-shadow-md">
+              Awaiting Translation...
             </p>
           </div>
         )}
       </div>
+
+      {!isRunning && !isLoading && !error && (
+        <div className="absolute inset-0 flex items-center justify-center z-50 bg-black/60">
+           <button onClick={startCamera} className="px-8 py-3 bg-white/10 border border-white/30 text-[#fdfbf7] hover:bg-white/20 transition-all font-serif italic text-xl tracking-widest shadow-xl backdrop-blur-md">
+             Start Translation
+           </button>
+        </div>
+      )}
     </div>
   );
 }

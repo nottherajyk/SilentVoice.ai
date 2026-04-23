@@ -4,9 +4,9 @@ function ConfidenceMeter({ confidence, handDetected }) {
   const percentage = Math.round((confidence || 0) * 100);
   
   return (
-    <div className="brutal-panel bg-white p-6">
-      <div className="flex justify-between items-end border-b-4 border-black pb-2 mb-4">
-        <h3 className="font-display font-black text-2xl uppercase">
+    <div className=" bg-white p-6">
+      <div className="flex justify-between items-end border-b border-white/20 pb-2 mb-4">
+        <h3 className="font-serif italic text-2xl tracking-widest text-[#fdfbf7]">
           confidence
         </h3>
         <span className="font-display font-black text-3xl">

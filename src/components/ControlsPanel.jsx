@@ -11,8 +11,8 @@ function ControlsPanel({ onAddLetter, onSpace, onBackspace, onClear, detectedLet
   ];
 
   return (
-    <div className="brutal-panel brutal-blue p-6">
-      <h3 className="font-display font-black text-2xl uppercase border-b-4 border-black pb-2 mb-6">
+    <div className="  p-6">
+      <h3 className="font-serif italic text-2xl tracking-widest text-[#fdfbf7] border-b border-white/20 pb-2 mb-6">
         controls
       </h3>
 
@@ -35,28 +35,28 @@ function ControlsPanel({ onAddLetter, onSpace, onBackspace, onClear, detectedLet
         <button 
           onClick={onAddLetter}
           disabled={!detectedLetter || !handDetected}
-          className="brutal-btn bg-white hover:bg-brutal-yellow"
+          className=" bg-white hover:bg-"
         >
           <span>add letter</span>
         </button>
         
         <button 
           onClick={onSpace}
-          className="brutal-btn bg-white hover:bg-brutal-green"
+          className=" bg-white hover:bg-"
         >
           <span>space</span>
         </button>
         
         <button 
           onClick={onBackspace}
-          className="brutal-btn bg-white hover:bg-brutal-pink"
+          className=" bg-white hover:bg-"
         >
           <span>backspace</span>
         </button>
         
         <button 
           onClick={onClear}
-          className="brutal-btn bg-brutal-black text-white hover:text-brutal-yellow hover:bg-black"
+          className=" bg-brutal-black text-white hover:text- hover:bg-black"
         >
           <span>clear all</span>
         </button>

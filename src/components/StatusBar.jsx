@@ -3,20 +3,20 @@ import React from 'react';
 function StatusBar({ isRunning, handDetected, fps, detectedLetter }) {
   return (
     <div className="flex flex-wrap gap-4 items-center">
-      <div className={`brutal-pill ${isRunning ? 'bg-brutal-green' : 'bg-brutal-pink'}`}>
+      <div className={`brutal-pill ${isRunning ? 'bg-' : 'bg-'}`}>
         <span className="w-3 h-3 rounded-full bg-black"></span>
         {isRunning ? 'camera on' : 'camera off'}
       </div>
       
       {isRunning && (
-        <div className={`brutal-pill ${handDetected ? 'bg-brutal-blue' : 'bg-white'}`}>
+        <div className={`brutal-pill ${handDetected ? 'bg-' : 'bg-white'}`}>
           <span>hand:</span>
           <span className="font-black text-lg">{handDetected ? 'DETECTED' : 'NONE'}</span>
         </div>
       )}
 
       {isRunning && (
-        <div className="brutal-pill bg-brutal-yellow">
+        <div className="brutal-pill bg-">
           <span>fps:</span>
           <span className="font-black text-lg">{fps}</span>
         </div>

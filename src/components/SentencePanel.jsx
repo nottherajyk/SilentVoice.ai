@@ -9,9 +9,9 @@ function SentencePanel({ sentence }) {
   };
 
   return (
-    <div className="brutal-panel brutal-yellow p-6 flex flex-col">
-      <div className="flex justify-between items-end border-b-4 border-black pb-2 mb-4">
-        <h3 className="font-display font-black text-2xl uppercase">
+    <div className="  p-6 flex flex-col">
+      <div className="flex justify-between items-end border-b border-white/20 pb-2 mb-4">
+        <h3 className="font-serif italic text-2xl tracking-widest text-[#fdfbf7]">
           translated text
         </h3>
         {sentence && (
