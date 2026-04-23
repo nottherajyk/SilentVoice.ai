@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brutal-black text-brutal-black font-sans m-0 p-0 overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Brutalist Panels */
+  .brutal-panel {
+    @apply bg-brutal-white border-4 border-brutal-black rounded-4xl shadow-brutal-lg overflow-hidden transition-transform duration-300;
+  }
+
+  /* Different background colors for panels */
+  .brutal-yellow { @apply bg-brutal-yellow; }
+  .brutal-green { @apply bg-brutal-green; }
+  .brutal-blue { @apply bg-brutal-blue; }
+  .brutal-pink { @apply bg-brutal-pink; }
+
+  /* Brutalist Buttons */
+  .brutal-btn {
+    @apply flex items-center justify-center gap-2 border-4 border-brutal-black rounded-full px-6 py-3 font-display font-black uppercase tracking-widest text-sm bg-brutal-white text-brutal-black shadow-brutal transition-all active:translate-x-1 active:translate-y-1 active:shadow-none hover:-translate-y-1 hover:shadow-brutal-lg disabled:opacity-50 disabled:pointer-events-none cursor-pointer;
+  }
+  
+  /* Progress bar container and fill */
+  .brutal-progress {
+    @apply w-full h-8 border-4 border-brutal-black rounded-full overflow-hidden bg-white;
+  }
+  
+  .brutal-progress-fill {
+    @apply h-full bg-brutal-blue border-r-4 border-brutal-black transition-all duration-300;
+  }
+
+  /* Status pill */
+  .brutal-pill {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full border-4 border-brutal-black font-bold text-xs uppercase shadow-brutal bg-white;
+  }
+}
+
+/* Custom text outline */
+.text-outline {
+  -webkit-text-stroke: 2px black;
+  color: white;
+}
+
+/* Camera panel */
+.camera-container {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 4/3;
+  border: 4px solid #000;
+}
+
+.camera-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.camera-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+}
+
+/* Loading spinner */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Sentence cursor blink */
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #000;
+  font-weight: 900;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 4px solid #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #faff00;
+  border: 4px solid #000;
+  border-radius: 6px;
+}
