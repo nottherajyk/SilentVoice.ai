@@ -2,7 +2,7 @@
 
 **A Silent Voice** (formerly SignText) is a real-time American Sign Language (ASL) detection and translation web application. Built with React, Vite, and MediaPipe, it leverages your webcam to capture hand gestures, track 3D skeletal landmarks, and translate static ASL signs into text instantly. 
 
-The application features a cinematic, elegant aesthetic inspired by the anime movie *A Silent Voice*, using glassmorphism, earthy tones, and a smooth, immersive scrolling experience.
+The application features aesthetic inspired by the anime movie *A Silent Voice*.
 
 ## 🚀 Features
 
