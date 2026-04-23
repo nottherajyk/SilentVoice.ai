@@ -180,7 +180,7 @@ function App() {
           
           {/* Left */}
           <div>
-            <p>SignSpeak © 2026</p>
+            <p>Silent Voice © 2026</p>
           </div>
           
           {/* Center */}
