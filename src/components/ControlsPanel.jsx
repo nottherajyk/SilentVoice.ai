@@ -2,28 +2,28 @@ import React from 'react';
 
 function ControlsPanel({ onAddLetter, onSpace, onBackspace, onClear, detectedLetter, handDetected, landmarkColor, onColorChange }) {
   const colors = [
-    { name: 'Blue', value: '#00b4ff' },
-    { name: 'Pink', value: '#ff00a0' },
-    { name: 'Green', value: '#22c55e' },
-    { name: 'Yellow', value: '#faff00' },
-    { name: 'White', value: '#ffffff' },
-    { name: 'Black', value: '#000000' }
+    { name: 'Pink', value: '#e2b4bd' },
+    { name: 'Brown', value: '#a38c73' },
+    { name: 'Green', value: '#8a9973' },
+    { name: 'Blue', value: '#82a4ab' },
+    { name: 'White', value: '#fdfbf7' },
+    { name: 'Dark', value: '#4a3827' }
   ];
 
   return (
-    <div className="  p-6">
-      <h3 className="font-serif italic text-2xl tracking-widest text-[#fdfbf7] border-b border-white/20 pb-2 mb-6">
-        controls
+    <div className="flex flex-col h-full">
+      <h3 className="font-serif italic text-xl tracking-widest text-[#fdfbf7] border-b border-white/20 pb-2 mb-4">
+        Controls
       </h3>
 
       <div className="mb-6">
-        <p className="font-bold uppercase text-sm mb-2">Line Color:</p>
-        <div className="flex gap-2 flex-wrap">
+        <p className="font-light tracking-widest text-xs mb-3 text-white/80 uppercase">Landmark Color</p>
+        <div className="flex gap-3 flex-wrap">
           {colors.map(c => (
             <button
               key={c.value}
               onClick={() => onColorChange(c.value)}
-              className={`w-8 h-8 rounded-full border-4 border-black shadow-brutal transition-transform ${landmarkColor === c.value ? 'scale-125' : 'hover:scale-110'}`}
+              className={`w-6 h-6 rounded-full border border-white/30 transition-all ${landmarkColor === c.value ? 'scale-125 ring-2 ring-white/50' : 'hover:scale-110 opacity-70 hover:opacity-100'}`}
               style={{ backgroundColor: c.value }}
               title={c.name}
             />
@@ -31,34 +31,34 @@ function ControlsPanel({ onAddLetter, onSpace, onBackspace, onClear, detectedLet
         </div>
       </div>
       
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3 mt-auto">
         <button 
           onClick={onAddLetter}
           disabled={!detectedLetter || !handDetected}
-          className=" bg-white hover:bg-"
+          className="px-3 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-[#fdfbf7] tracking-widest text-xs uppercase transition-all rounded-sm disabled:opacity-30"
         >
-          <span>add letter</span>
+          Add Letter
         </button>
         
         <button 
           onClick={onSpace}
-          className=" bg-white hover:bg-"
+          className="px-3 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-[#fdfbf7] tracking-widest text-xs uppercase transition-all rounded-sm"
         >
-          <span>space</span>
+          Space
         </button>
         
         <button 
           onClick={onBackspace}
-          className=" bg-white hover:bg-"
+          className="px-3 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-[#fdfbf7] tracking-widest text-xs uppercase transition-all rounded-sm"
         >
-          <span>backspace</span>
+          Backspace
         </button>
         
         <button 
           onClick={onClear}
-          className=" bg-brutal-black text-white hover:text- hover:bg-black"
+          className="px-3 py-2 bg-[#4a3827]/80 hover:bg-[#4a3827] border border-white/20 text-[#fdfbf7] tracking-widest text-xs uppercase transition-all rounded-sm"
         >
-          <span>clear all</span>
+          Clear All
         </button>
       </div>
     </div>

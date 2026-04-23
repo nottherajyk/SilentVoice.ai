@@ -1,30 +1,28 @@
 import React from 'react';
 
 function ConfidenceMeter({ confidence, handDetected }) {
-  const percentage = Math.round((confidence || 0) * 100);
+  const percentage = Math.round(confidence * 100);
   
   return (
-    <div className=" bg-white p-6">
-      <div className="flex justify-between items-end border-b border-white/20 pb-2 mb-4">
-        <h3 className="font-serif italic text-2xl tracking-widest text-[#fdfbf7]">
-          confidence
+    <div className="flex flex-col h-full justify-center">
+      <div className="flex justify-between items-end mb-2">
+        <h3 className="font-serif italic tracking-widest text-sm text-white/80 uppercase">
+          AI Confidence
         </h3>
-        <span className="font-display font-black text-3xl">
+        <span className="font-serif italic text-[#fdfbf7]">
           {handDetected ? `${percentage}%` : '---'}
         </span>
       </div>
-
-      <div className="brutal-progress mt-2">
+      
+      <div className="w-full h-2 bg-white/10 rounded-sm overflow-hidden">
         <div 
-          className="brutal-progress-fill" 
-          style={{ width: `${handDetected ? percentage : 0}%` }}
+          className="h-full bg-white/60 transition-all duration-300"
+          style={{ width: handDetected ? `${percentage}%` : '0%' }}
         />
       </div>
       
       {!handDetected && (
-        <p className="mt-4 font-bold text-sm uppercase text-gray-500">
-          waiting for hand...
-        </p>
+        <p className="text-xs text-white/50 tracking-widest mt-2 uppercase">Waiting for hand sign...</p>
       )}
     </div>
   );

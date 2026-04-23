@@ -2,28 +2,18 @@ import React from 'react';
 
 function DetectedLetter({ letter, confidence, handDetected }) {
   return (
-    <div className="  p-6 flex flex-col items-center justify-center text-center min-h-[250px]">
-      <h3 className="font-serif italic text-2xl tracking-widest text-[#fdfbf7] border-b border-white/20 pb-2 mb-6 w-full text-left">
-        detected letter
-      </h3>
+    <div className="flex flex-col items-center justify-center w-full h-full p-2 relative">
+      <div className="absolute top-2 left-2 right-2 flex justify-between">
+         <span className="text-[10px] tracking-widest uppercase opacity-50">Sign</span>
+         <div className={`w-2 h-2 rounded-full ${handDetected ? 'bg-green-400' : 'bg-red-400/50'}`} />
+      </div>
       
-      <div className="flex-1 flex flex-col items-center justify-center w-full">
-        {!handDetected ? (
-          <div className="opacity-70 rotate-[-5deg]">
-            <div className="text-6xl mb-4">👋</div>
-            <p className="font-bold uppercase tracking-widest text-xl">waiting...</p>
-          </div>
-        ) : letter ? (
-          <div className="relative">
-            <div className="font-display font-black text-[10rem] leading-none text-outline">
-              {letter}
-            </div>
-            {/* Pop decoration */}
-            <div className="absolute -top-4 -right-8 text-4xl animate-bounce">✨</div>
-          </div>
-        ) : (
-          <div className="text-6xl font-display font-black text-outline">?</div>
-        )}
+      <div className="text-5xl md:text-7xl font-serif text-[#fdfbf7] drop-shadow-md">
+        {handDetected ? (letter || '—') : '—'}
+      </div>
+      
+      <div className="absolute bottom-2 text-[10px] tracking-widest uppercase opacity-50">
+        {handDetected ? `${Math.round(confidence * 100)}% match` : 'waiting...'}
       </div>
     </div>
   );

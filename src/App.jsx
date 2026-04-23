@@ -67,42 +67,49 @@ function App() {
     <div className="min-h-screen bg-[#8a7056] text-[#fdfbf7] font-sans selection:bg-white/30 pb-20">
       
       {/* HERO SECTION */}
-      <div className="relative w-full h-[60vh] md:h-[75vh] flex flex-col justify-end p-6 md:p-16 border-b border-white/20">
+      <div className="relative w-full h-[80vh] md:h-screen flex flex-col justify-center items-center text-center p-6 md:p-16 border-b border-white/20">
         
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img src={heroBg} alt="Cinematic background" className="w-full h-full object-cover opacity-90" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#8a7056] via-[#8a7056]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#8a7056] via-[#8a7056]/30 to-[#8a7056]/50" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto w-full">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-widest text-[#fdfbf7] mb-2" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
+        <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col items-center">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif tracking-widest text-[#fdfbf7] mb-6 drop-shadow-lg" style={{ textShadow: '0 4px 25px rgba(0,0,0,0.6)' }}>
             A Silent Voice
           </h1>
-          <p className="text-xs md:text-sm tracking-[0.2em] font-semibold opacity-90 mb-6 drop-shadow-md uppercase">
+          <p className="text-xs md:text-sm tracking-[0.3em] font-semibold opacity-90 mb-8 drop-shadow-md uppercase text-[#fdfbf7]">
             2026 | Real-time Web App | AI Engine | Language: ASL
           </p>
-          <div className="w-full h-px bg-white/40 mb-8" />
+          <div className="w-3/4 max-w-lg h-px bg-white/40 mb-10" />
           
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-24 h-36 md:w-32 md:h-48 bg-black/20 rounded-sm shrink-0 shadow-lg overflow-hidden flex items-center justify-center border border-white/30 backdrop-blur-md">
+          <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+            <div className="w-24 h-36 md:w-32 md:h-48 bg-black/40 rounded-sm shrink-0 shadow-2xl overflow-hidden flex items-center justify-center border border-white/30 backdrop-blur-md">
                  <DetectedLetter letter={detectedLetter} confidence={confidence} handDetected={handDetected} />
             </div>
-            <div className="max-w-xl text-[#fdfbf7]/90 leading-relaxed font-light text-sm md:text-base drop-shadow-md">
-              <p className="mb-2"><span className="opacity-70">Dir.</span> Silent Voice AI Team</p>
-              <p className="mb-4"><span className="opacity-70">Cast:</span> MediaPipe Hand Tracking</p>
-              <p>
-                A person with a desire to communicate bridges the gap between silence and spoken words. 
-                Using real-time AI computer vision, this browser-based tool translates American Sign Language 
-                gestures into text instantly. Communicate freely without saying a word.
+            <div className="max-w-md text-[#fdfbf7] leading-relaxed font-light text-sm md:text-base drop-shadow-md text-left bg-black/20 p-6 backdrop-blur-md rounded-sm border border-white/10">
+              <p className="mb-2"><span className="opacity-70 font-semibold uppercase text-xs tracking-widest">Dir.</span> Silent Voice AI Team</p>
+              <p className="mb-4"><span className="opacity-70 font-semibold uppercase text-xs tracking-widest">Cast:</span> MediaPipe Hand Tracking</p>
+              <p className="text-sm">
+                A student with hearing problems suffers from isolation and decides to change their world. 
+                Years later, this AI-powered bridge between silence and spoken words translates American Sign Language 
+                gestures into text instantly, allowing everyone to be heard without saying a word.
               </p>
             </div>
           </div>
         </div>
+
+        {/* Scroll Down Animation */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer opacity-80 hover:opacity-100 transition-opacity" onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}>
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fdfbf7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
       </div>
 
-      {/* MAIN APP GRID (The "Movie Stills") */}
-      <div className="max-w-5xl mx-auto w-full p-6 md:p-16 mt-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+      {/* MAIN APP GRID */}
+      <div className="max-w-7xl mx-auto w-full p-6 md:p-12 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
           {/* CAMERA (Takes 2 cols) */}
           <div className="md:col-span-2 aspect-video bg-[#3b2c1f]/80 overflow-hidden shadow-2xl relative border border-white/20">
@@ -118,7 +125,7 @@ function App() {
           </div>
 
           {/* RIGHT SIDE TOOLS (Takes 1 col, stacked) */}
-          <div className="flex flex-col gap-3 md:gap-4">
+          <div className="flex flex-col gap-6">
             <div className="bg-[#a38c73]/30 border border-white/10 p-4 md:p-6 flex-1 shadow-lg backdrop-blur-md rounded-sm">
               <SentencePanel sentence={sentence} />
             </div>
