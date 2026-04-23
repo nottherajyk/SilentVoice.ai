@@ -77,11 +77,13 @@ function App() {
           </svg>
         </button>
         
-        <div className="hidden md:block font-display font-black text-4xl tracking-widest" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
-          SIGNTEXT
-        </div>
-        <div className="block md:hidden font-display font-black text-3xl tracking-widest">
-          SIGNTEXT
+        <div className="flex-1 flex items-center justify-center md:justify-start w-full md:pt-16">
+          <div className="hidden md:block font-display font-black text-4xl tracking-widest text-center" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+            SILENT VOICE
+          </div>
+          <div className="block md:hidden font-display font-black text-2xl tracking-widest text-center">
+            SILENT VOICE
+          </div>
         </div>
 
         <div className="text-4xl">

@@ -5,7 +5,7 @@ function Header({ isRunning, handDetected, fps }) {
     <header className="flex flex-col md:flex-row justify-between items-start md:items-center w-full pb-4 border-b-8 border-black">
       <div>
         <h1 className="font-display font-black text-5xl md:text-6xl uppercase tracking-tight leading-none text-outline mb-2">
-          Sign Language
+          Silent Voice
         </h1>
         <p className="font-bold text-xl uppercase tracking-widest bg-black text-white inline-block px-2 py-1 transform -rotate-1">
           Real-time AI Translator
