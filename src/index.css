@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply text-brutal-black font-sans m-0 p-0 overflow-x-hidden;
     background-color: #8a7056;
